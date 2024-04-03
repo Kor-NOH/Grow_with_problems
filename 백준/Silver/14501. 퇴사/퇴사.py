@@ -12,10 +12,8 @@ for _ in range(n):
 for i in range(n+1):
     max_num = 0
     for j in range(0, i):
-        if schedule_list[j][0] <= n-j:
-            if schedule_list[j][0] + j <= i:
-                if schedule_list[j][1] + dp[j] > max_num:
-                    max_num = schedule_list[j][1]+dp[j]
+        if schedule_list[j][0] <= n-j and schedule_list[j][0] + j <= i and schedule_list[j][1] + dp[j] > max_num:
+            max_num = schedule_list[j][1]+dp[j]
 
     dp[i] = max_num
 
